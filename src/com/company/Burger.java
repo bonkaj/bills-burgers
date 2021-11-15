@@ -17,25 +17,6 @@ public class Burger {
         Tomato = tomato;
         this.dblMeat = dblMeat;
         Price = 5.00;
-    }
-
-    public void setOnion(boolean onion) {
-        Onion = onion;
-    }
-
-    public void setLettuce(boolean lettuce) {
-        Lettuce = lettuce;
-    }
-
-    public void setTomato(boolean tomato) {
-        Tomato = tomato;
-    }
-
-    public void setDblMeat(boolean dblMeat) {
-        this.dblMeat = dblMeat;
-    }
-
-    public double getPrice() {
         if (Onion == true) {
             Price = Price + .50;
         }
@@ -48,6 +29,47 @@ public class Burger {
         if (dblMeat == true) {
             Price = Price + 2;
         }
+
+    }
+
+    public void setOnion(boolean onion) {
+        if (onion && !this.Onion) {
+            Price = Price + .5;
+        } else if (!onion && this.Onion) {
+            Price = Price - .5;
+        }
+        Onion = onion;
+    }
+
+    public void setLettuce(boolean lettuce) {
+        if (lettuce && !this.Lettuce) {
+            Price = Price + .5;
+        } else if (!lettuce && this.Lettuce) {
+            Price = Price - .5;
+        }
+        Lettuce = lettuce;
+    }
+
+    public void setTomato(boolean tomato) {
+        if (tomato && !this.Tomato) {
+            Price = Price + .5;
+        } else if (!tomato && this.Tomato) {
+            Price = Price - .5;
+        }
+        Tomato = tomato;
+    }
+
+    public void setDblMeat(boolean dblMeat) {
+        if (dblMeat && !this.dblMeat) {
+            Price = Price + 2;
+        } else if (!dblMeat && this.dblMeat) {
+            Price = Price - 2;
+        }
+        this.dblMeat = dblMeat;
+    }
+
+    public double getPrice() {
+
         return Price;
     }
 }
