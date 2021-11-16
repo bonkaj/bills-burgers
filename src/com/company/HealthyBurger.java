@@ -1,6 +1,7 @@
 package com.company;
 
-public class Burger {
+public class HealthyBurger extends Burger{
+
     private String Roll;
     private String Meat;
     private boolean Onion;
@@ -9,27 +10,14 @@ public class Burger {
     private boolean dblMeat;
     private double Price;
 
-    public Burger() {
-        Roll = "Ciabatta";
-        Meat = "ground beef";
+    public HealthyBurger() {
+        Roll = "Whole Grain";
+        Meat = "Turkey";
         Onion = false;
         Lettuce = false;
         Tomato = false;
         this.dblMeat = false;
-        Price = 5.00;
-        if (Onion == true) {
-            Price = Price + .50;
-        }
-        if (Lettuce == true) {
-            Price = Price + .50;
-        }
-        if (Tomato == true) {
-            Price = Price + .50;
-        }
-        if (dblMeat == true) {
-            Price = Price + 2;
-        }
-
+        Price = 7.00;
     }
 
     public void setOnion(boolean onion) {
@@ -66,9 +54,5 @@ public class Burger {
             Price = Price - 2;
         }
         this.dblMeat = dblMeat;
-    }
-
-    public double getPrice() {
-        return Price;
     }
 }
